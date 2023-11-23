@@ -1,0 +1,23 @@
+# Dépendances
+/node_modules/
+/vendor/
+
+# Fichiers de configuration et de build
+*.log
+.env
+/dist/
+
+# Environnement de développement
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Cache et sessions
+*.cache
+/session/
+
+# WordPress spécifique
+wp-config.php
+wp-content/uploads/
+backup-*
