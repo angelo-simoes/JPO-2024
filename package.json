@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx postcss style.css -o dist/style.css"
-  }
-  ,
+    "build": "npx tailwindcss -i ./tailwind.css -o ./style.css --watch"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0",
+    "postcss-cli": "^10.1.0"
+  },
+  "devDependencies": {
     "tailwindcss": "^3.3.5"
   }
 }
