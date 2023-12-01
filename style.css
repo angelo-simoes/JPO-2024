@@ -790,6 +790,18 @@ video {
   display: none;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -1920,12 +1932,16 @@ video {
   font-size: 15px;
 }
 
-.font-bold {
-  font-weight: 700;
+.text-\[90px\] {
+  font-size: 90px;
 }
 
 .font-black {
   font-weight: 900;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .uppercase {

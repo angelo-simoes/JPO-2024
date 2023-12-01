@@ -4,7 +4,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php the_title(); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
-    <!-- Assurez-vous que TailwindCSS est inclus ici -->
     <?php wp_head(); ?>
   </head>
   <body class="bg-black">
