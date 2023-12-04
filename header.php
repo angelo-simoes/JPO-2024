@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
     <?php wp_head(); ?>
   </head>
-  <body class="bg-black">
+  <body class="bg-black font-montserrat text-white">
     <div class="wrap">
       <header class="flex items-center justify-center p-4 mx-10"> <!-- mx-10 pour la marge horizontale de l'en-tête -->
                 <div class="logo-container">
