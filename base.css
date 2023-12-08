@@ -1,0 +1,40 @@
+h2 {
+    font-weight: 800; /* Extrabold */
+    font-size: 50px;
+  }
+
+h4 {
+    font-weight: bold; /* Bold */
+    font-size: 26px;
+}
+
+p {
+    font-weight: medium; /* Normal */
+    font-size: 15px;
+}
+
+.full-width-element {
+    width: calc(100% + 400px); /* Ajouter deux fois la marge parente */
+    margin-left: -200px; /* Marge négative pour contrer la marge parente */
+    margin-right: -200px; /* Marge négative pour contrer la marge parente */
+}
+
+.dotted-border-rounded {
+    border: 2px dashed #ec4899; /* Définit un contour pointillé */
+    border-radius: 10px;        /* Arrondit les coins du contour */
+    padding: 20px;              /* Ajoute un peu d'espace autour du texte */
+}
+
+.margin-element {
+    width: 60%;
+    margin: 0 auto; /* pour centrer si souhaité */
+}
+
+.rounded-img img {
+    border-radius: 50px; /* Arrondit les coins de l'image */
+}
+
+.text-pink {
+    --tw-text-opacity: 1;
+    color: rgb(236 72 153 / var(--tw-text-opacity));
+}

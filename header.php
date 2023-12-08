@@ -24,4 +24,16 @@
             ) );
           ?>
         </nav>
+        <nav class="montserrat">
+            <?php 
+                wp_nav_menu( array(
+                    'theme_location' => 'connexion', // Utilisez l'emplacement 'connexion'
+                    'container' => false,
+                    'menu_class' => 'flex space-x-6',
+                    'add_li_class' => 'menu-item-connexion', // Nouvelle classe pour les items
+                ) );
+            ?>
+        </nav>
+
+
       </header>

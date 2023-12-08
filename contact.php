@@ -34,7 +34,7 @@ get_footer();
     background: #000; /* Fond noir */
     padding: 20px;
     border-radius: 8px;
-    border: 3px dashed #D02670; /* Bordure pointillée violette */
+    border: 3px dashed #db2777; /* Bordure pointillée violette */
 }
 
 /* Styliser les champs de texte */
@@ -56,7 +56,7 @@ get_footer();
 
 /* Styliser le bouton d'envoi */
 .wpcf7-form-control.wpcf7-submit {
-    background-color: #D02670; /* Fond violet */
+    background-color: #db2777; /* Fond violet */
     color: #fff; /* Texte blanc */
     border: none;
     padding: 10px 20px;

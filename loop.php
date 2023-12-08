@@ -5,7 +5,7 @@
         <h3 class="post-title text-center text-[90px] font-black uppercase">
             <a href="<?php the_permalink(); ?>" class="text-white"><?php the_title(); ?></a>
         </h3>
-        <div class="post-content">
+        <div class="mx-[200px]">
             <?php the_content(); ?>
         </div>
     </div>
