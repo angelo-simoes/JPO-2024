@@ -3,9 +3,14 @@ h2 {
     font-size: 50px;
   }
 
-h4 {
+h3 {
     font-weight: bold; /* Bold */
     font-size: 26px;
+}
+
+h4 {
+    font-weight: bold; /* Bold */
+    font-size: 18px;
 }
 
 p {
@@ -37,4 +42,13 @@ p {
 .text-pink {
     --tw-text-opacity: 1;
     color: rgb(236 72 153 / var(--tw-text-opacity));
+}
+
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+    font-weight: bold;
 }

@@ -28,7 +28,7 @@ function add_additional_class_on_li($classes, $item, $args) {
   }
   // Ajouter une classe 'current-menu-item' aux éléments actifs
   if (in_array('current-menu-item', $classes) || in_array('current_page_item', $classes)) {
-      $classes[] = 'underline';
+      $classes[] = 'underline ';
   }
   return $classes;
 }
@@ -36,7 +36,7 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 10, 3);
 
 function add_class_to_menu_links($atts, $item, $args) {
   // Ajouter les classes 'text-white' et la classe pour Montserrat
-  $atts['class'] = 'text-white font-montserrat font-black text-[15px]  hover:underline';
+  $atts['class'] = 'text-white font-montserrat font-black text-[15px]  hover:underline hover:text-pink-500';
   return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_class_to_menu_links', 10, 3);
