@@ -52,3 +52,94 @@ p {
     border-radius: 20px;
     font-weight: bold;
 }
+
+.tiktok {
+    background-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.center-youtube-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Ajoutez ces styles pour le menu hamburger */
+.menu-hamburger {
+    display: none;
+  }
+  
+  /* Styles pour le menu déroulant (visible uniquement sur les petits écrans) */
+  .menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: 1rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #fff;
+    text-align: left;
+    list-style: none;
+    background-color: #111827;
+    background-clip: padding-box;
+    border: 1px solid #718096;
+    border-radius: 0.5rem;
+  }
+  
+  .menu-dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    white-space: nowrap;
+  }
+  
+  .menu-dropdown a:hover {
+    color: #fbd38d;
+    background-color: #1f2937;
+  }
+
+  .menu-icon {
+    font-size: 20px; /* Ajustez la taille selon vos besoins */
+  }
+  
+  
+/* Ajoutez ces styles à la fin de votre fichier CSS */
+
+/* Styles généraux */
+
+/* Ajoutez des styles spécifiques pour les écrans de petite taille (mobiles) */
+@media only screen and (max-width: 767px) {
+    .dotted-border-rounded {
+        /* Ajoutez des styles spécifiques pour le paragraphe */
+        font-size: 16px; /* Taille de police plus petite */
+        padding: 15px; /* Ajoute un espace intérieur pour le paragraphe */
+    }
+
+    /* Ajoutez des styles spécifiques pour les images à l'intérieur des colonnes */
+    .rounded-img img {
+        width: 100%; /* Assure que l'image occupe la largeur complète du conteneur */
+        height: auto; /* Ajuste la hauteur de manière proportionnelle */
+    }
+
+    /* Ajoutez des styles spécifiques pour les espaces */
+    .wp-block-spacer {
+        height: 20px; /* Réduisez la hauteur de l'espace */
+    }
+    .wp-block-columns {
+        flex-direction: column; /* Changez la direction à la verticale */
+    }
+}
+
+/* Styles spécifiques pour les tablettes (768px - 1023px) si nécessaire */
+
+/* Styles spécifiques pour les ordinateurs de bureau (1024px et plus) si nécessaire */
+
