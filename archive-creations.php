@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php get_header(); 
+acf_form_head();
+?>
 
 <h1 class="post-title text-center text-[90px] font-black uppercase">
     Créations étudiantes
@@ -8,7 +10,32 @@
 <p class="has-text-align-center dotted-border-rounded margin-element">A l’occasion de SAÉ, de projets collectifs ou bien même personnels, nos étudiants ont mis leur créativité au défi ! Retrouvez ici les projets les plus ambitieux créés par quelques étudiants de MMI. </p>
 <!-- /wp:paragraph -->
 
-<div class="player-cards">
+<div>
+<?php if (is_user_logged_in()) : ?>
+    <div class="add-creation-message text-center">
+        <p class="add-creation-message text-center">Si vous souhaitez partager une de vos créations</p>
+        <button onclick="toggleQuestionnaire()" class="btn add-button">Ajouter</a>
+    </div>
+    <div id="formulaire" style="display: none;">
+            <?php
+            // Votre formulaire ACF peut être inclus ici
+                acf_form(array(
+                    'post_id'      => 'new_post',
+                    'new_post'     => array(
+                        'post_type'   => 'creations',
+                        'post_status' => 'draft'
+                    ),
+                    'post_title'   => true,
+                    'field_groups' => array('group_656a6f6007daa'), // Remplacez par l'ID de votre groupe de champs ACF
+                    'fields'       => array('nom_etudiant', 'image', 'lien', 'description'), // Ajoutez les champs du formulaire ACF ici
+                    'submit_value' => 'Soumettre la création'
+                ));
+            ?>
+        </div>
+<?php endif; ?>
+</div>
+
+<div class="creation-cards">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
 
@@ -37,9 +64,16 @@
 
 <?php get_footer(); ?>
 
+<script>
+    function toggleQuestionnaire() {
+        var questionnaire = document.getElementById('formulaire');
+        questionnaire.style.display = (questionnaire.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
 <style>
 /* Ajustements pour la taille des cartes */
-.player-cards {
+.creation-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Ajustez la largeur minimale et maximale ici */
     gap: 20px;
@@ -101,7 +135,7 @@ h3, p {
 }
 
 .fill {
-    background: rgba(0, 212, 255, 0.9);
+    background: #ec4899;
     color: rgba(255,255,255,0.95);
     filter: drop-shadow(0);
     font-weight: bold;
@@ -118,15 +152,102 @@ h3, p {
 /* Le reste de vos styles reste inchangé */
 
 @media screen and (max-width: 1200px) {
-    .player-cards {
+    .creation-cards {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 900px) {
-    .player-cards {
+    .creation-cards {
         grid-template-columns: 1fr;
     }
 }
+
+.add-creation-message {
+    margin-top: 50px;
+    text-align: center !important;
+}
+
+.add-creation-message p {
+    margin-bottom: 20px;
+}
+
+.add-button {
+    background: none; /* Retirez le fond actuel */
+    color: #ec4899; /* Couleur de texte correspondant au fond */
+    border: 2px solid #ec4899; /* Ajoutez une bordure pour styliser */
+    font-weight: bold;
+    transition: all .3s ease; 
+}
+
+.add-button:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    transition: all .3s ease;
+}
+#formulaire {
+    margin-left: 30%; /* Ajoutez la marge de chaque côté du formulaire selon vos préférences */
+    margin-right: 30%;
+    margin-bottom: 50px;
+}
+
+.acf-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.acf-field {
+    margin-bottom: 20px; /* Ajoutez la marge entre chaque champ selon vos préférences */
+}
+
+.acf-label {
+    text-align: left; /* Aligner le nom du champ à gauche */
+    margin-bottom: 5px; /* Ajouter une marge sous le nom du champ */
+}
+
+.acf-input {
+    width: 100%; /* Assurez-vous que les champs de saisie occupent toute la largeur disponible */
+}
+
+.acf-field textarea,
+.acf-field select,
+.acf-field input[type="text"],
+.acf-field input[type="email"],
+.acf-field input[type="url"] {
+    width: calc(100% - 10px); /* Ajoutez une légère marge à gauche pour le champ de saisie */
+}
+
+#formulaire .acf-input input[type="text"],
+#formulaire .acf-input input[type="email"],
+#formulaire .acf-input input[type="url"],
+#formulaire .acf-input textarea,
+#formulaire .acf-input select {
+    color: black; /* Définissez la couleur du texte selon vos préférences */
+}
+
+input[type="submit"] {
+    background-color:#ec4899; 
+    color: black; 
+    padding: 12px 20px;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+a.acf-button.button {
+    color: #ec4899;
+}
+
+input[type="submit"]:hover {
+    background-color: #EF1783; 
+}
+
+
+
 
 </style>

@@ -1,6 +1,24 @@
 <?php
-
-add_theme_support( 'post-thumbnails' );
+  function thememonsite_setup() {
+    // Ajout du support pour les images mises en avant
+    add_theme_support( 'post-thumbnails' );
+    // Ajout du support pour le titre du site
+    add_theme_support( 'title-tag' );
+    // Ajout du support pour rendre le code valide en HTML 5
+    add_theme_support( 
+      'html5', 
+      array( 
+        'comment-list', 
+        'comment-form', 
+        'search-form', 
+        'gallery', 
+        'caption',
+        'style',
+        'script'
+      )
+    );
+  }
+    add_action( 'after_setup_theme', 'thememonsite_setup' );
 
 function add_google_fonts() {
   wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', false ); 
@@ -62,5 +80,14 @@ function enqueue_lightbox_script() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_lightbox_script');
 
+function custom_acf_prepare_field($field) {
+  // Remplace le label du champ "Title" par "Titre"
+  if ($field['label'] == 'Title') {
+      $field['label'] = 'Nom de la création';
+  }
+
+  return $field;
+}
+add_filter('acf/prepare_field', 'custom_acf_prepare_field');
 ?>
 

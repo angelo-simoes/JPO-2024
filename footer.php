@@ -88,6 +88,11 @@
 </html>
 
 <style>
+
+        .pg-footer {
+            margin-top: 100px;
+        }
+
         * {
             margin: 0;
             padding: 0;
